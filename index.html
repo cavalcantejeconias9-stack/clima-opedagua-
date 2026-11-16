@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tempo Agora</title>
+    <meta
+      name="description"
+      content="Aplicação de previsão do tempo em tempo real com busca por cidade e clima local."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Clima e previsão</p>
+          <h1>Tempo Agora</h1>
+        </div>
+        <button id="locationButton" class="ghost-button" type="button">
+          Usar minha localização
+        </button>
+      </header>
+
+      <form id="searchForm" class="search-bar" autocomplete="off">
+        <label class="sr-only" for="cityInput">Buscar cidade</label>
+        <input
+          id="cityInput"
+          name="city"
+          type="text"
+          placeholder="Digite uma cidade..."
+          value="Lisboa"
+        />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <main class="weather-layout">
+        <section class="weather-card">
+          <div class="location-row">
+            <div>
+              <p id="cityName" class="city">Carregando...</p>
+              <p id="dateText" class="date">--</p>
+            </div>
+            <div id="conditionTag" class="condition-tag">--</div>
+          </div>
+
+          <div class="main-weather">
+            <div id="weatherIcon" class="weather-icon" aria-label="Condição do tempo">☀️</div>
+            <div>
+              <div id="temperature" class="temperature">--°</div>
+              <div id="conditionText" class="condition">--</div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span>Sensação</span>
+              <strong id="feelsLike">--°</strong>
+            </div>
+            <div class="stat-box">
+              <span>Umidade</span>
+              <strong id="humidity">--%</strong>
+            </div>
+            <div class="stat-box">
+              <span>Vento</span>
+              <strong id="wind">-- km/h</strong>
+            </div>
+            <div class="stat-box">
+              <span>Máx / Mín</span>
+              <strong id="tempRange">-- / --</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="forecast-panel">
+          <h2>Próximos dias</h2>
+          <div id="forecastList" class="forecast-list"></div>
+        </aside>
+      </main>
+    </div>
+
+    <template id="forecastItemTemplate">
+      <div class="forecast-item">
+        <span class="forecast-day"></span>
+        <span class="forecast-icon" aria-hidden="true"></span>
+        <span class="forecast-temp"></span>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
