@@ -3,20 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tempo Agora</title>
+    <title>Clima Agora</title>
     <meta
       name="description"
-      content="Aplicação de previsão do tempo em tempo real com busca por cidade e clima local."
+      content="Painel de clima moderno com previsão do tempo e busca por cidade."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+
     <div class="app-shell">
       <header class="topbar">
-        <div>
+        <div class="brand-block">
           <p class="eyebrow">Clima e previsão</p>
-          <h1>Tempo Agora</h1>
+          <h1>Clima Agora</h1>
         </div>
+
         <button id="locationButton" class="ghost-button" type="button">
           Usar minha localização
         </button>
@@ -73,7 +83,10 @@
         </section>
 
         <aside class="forecast-panel">
-          <h2>Próximos dias</h2>
+          <div class="panel-header">
+            <h2>Próximos dias</h2>
+            <span class="panel-badge">5 dias</span>
+          </div>
           <div id="forecastList" class="forecast-list"></div>
         </aside>
       </main>
