@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "Clima Agora — Previsão do Tempo",
+  "short_name": "Clima Agora",
+  "description": "Consulte o clima atual e a previsão para os próximos dias.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#071827",
+  "theme_color": "#071827",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

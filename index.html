@@ -1,51 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#071827" />
+    <meta name="description" content="Consulte a previsão do tempo por cidade, com experiência rápida e instalável." />
     <title>Clima Agora</title>
-    <meta
-      name="description"
-      content="Painel de clima moderno com previsão do tempo e busca por cidade."
-    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="background-orb orb-one"></div>
-    <div class="background-orb orb-two"></div>
+    <div class="background-orb orb-one" aria-hidden="true"></div>
+    <div class="background-orb orb-two" aria-hidden="true"></div>
 
     <div class="app-shell">
       <header class="topbar">
-        <div class="brand-block">
-          <p class="eyebrow">Clima e previsão</p>
-          <h1>Clima Agora</h1>
+        <a class="brand-block" href="./" aria-label="Clima Agora, início">
+          <span class="brand-mark" aria-hidden="true">☀</span>
+          <span>
+            <span class="eyebrow">Clima e previsão</span>
+            <h1>Clima Agora</h1>
+          </span>
+        </a>
+        <div class="header-actions">
+          <button id="themeButton" class="icon-button" type="button" aria-label="Ativar tema claro" title="Alternar tema">
+            <span id="themeIcon" aria-hidden="true">☀️</span>
+          </button>
+          <button id="installButton" class="install-button" type="button" hidden>Instalar app</button>
         </div>
-
-        <button id="locationButton" class="ghost-button" type="button">
-          Usar minha localização
-        </button>
       </header>
 
       <form id="searchForm" class="search-bar" autocomplete="off">
         <label class="sr-only" for="cityInput">Buscar cidade</label>
-        <input
-          id="cityInput"
-          name="city"
-          type="text"
-          placeholder="Digite uma cidade..."
-          value="Lisboa"
-        />
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="cityInput" name="city" type="search" placeholder="Buscar cidade..." value="Lisboa" enterkeyhint="search" />
         <button type="submit">Buscar</button>
       </form>
 
+      <div class="utility-row">
+        <button id="locationButton" class="location-button" type="button">
+          <span aria-hidden="true">⌖</span> Usar minha localização
+        </button>
+        <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+      </div>
+
       <main class="weather-layout">
-        <section class="weather-card">
+        <section class="weather-card" aria-label="Clima atual">
           <div class="location-row">
             <div>
               <p id="cityName" class="city">Carregando...</p>
@@ -56,50 +60,38 @@
 
           <div class="main-weather">
             <div id="weatherIcon" class="weather-icon" aria-label="Condição do tempo">☀️</div>
-            <div>
+            <div class="temperature-block">
               <div id="temperature" class="temperature">--°</div>
-              <div id="conditionText" class="condition">--</div>
+              <div id="conditionText" class="condition">Carregando previsão...</div>
             </div>
           </div>
 
           <div class="stats-grid">
-            <div class="stat-box">
-              <span>Sensação</span>
-              <strong id="feelsLike">--°</strong>
-            </div>
-            <div class="stat-box">
-              <span>Umidade</span>
-              <strong id="humidity">--%</strong>
-            </div>
-            <div class="stat-box">
-              <span>Vento</span>
-              <strong id="wind">-- km/h</strong>
-            </div>
-            <div class="stat-box">
-              <span>Máx / Mín</span>
-              <strong id="tempRange">-- / --</strong>
-            </div>
+            <div class="stat-box"><span>Sensação</span><strong id="feelsLike">--°</strong></div>
+            <div class="stat-box"><span>Umidade</span><strong id="humidity">--%</strong></div>
+            <div class="stat-box"><span>Vento</span><strong id="wind">-- km/h</strong></div>
+            <div class="stat-box"><span>Máx / Mín</span><strong id="tempRange">-- / --</strong></div>
           </div>
         </section>
 
-        <aside class="forecast-panel">
+        <section class="forecast-panel" aria-labelledby="forecastTitle">
           <div class="panel-header">
-            <h2>Próximos dias</h2>
+            <div><p class="eyebrow">Planeje seu dia</p><h2 id="forecastTitle">Próximos dias</h2></div>
             <span class="panel-badge">5 dias</span>
           </div>
           <div id="forecastList" class="forecast-list"></div>
-        </aside>
+        </section>
       </main>
+      <footer class="app-footer">Dados meteorológicos por <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a></footer>
     </div>
 
     <template id="forecastItemTemplate">
-      <div class="forecast-item">
+      <article class="forecast-item">
         <span class="forecast-day"></span>
         <span class="forecast-icon" aria-hidden="true"></span>
         <span class="forecast-temp"></span>
-      </div>
+      </article>
     </template>
-
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
