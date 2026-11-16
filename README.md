@@ -1,0 +1,10 @@
+<img width="1000" height="667" alt="tempo_verao" src="https://github.com/user-attachments/assets/301dfa8a-a209-4382-91d0-7618b2d46fd8" />
+<img width="1000" height="667" alt="tempo_primavera" src="https://github.com/user-attachments/assets/180ea534-a14c-480b-9e5e-533093abef4a" />
+<img width="1000" height="667" alt="tempo_outono" src="https://github.com/user-attachments/assets/7678b712-6524-4315-b439-36f4652f269a" />
+<img width="1000" height="667" alt="tempo_inverno" src="https://github.com/user-attachments/assets/6248b31b-a5ed-4e13-b95d-b9c8430e9022" />
+<img width="512" height="512" alt="icone_app" src="https://github.com/user-attachments/assets/1af55b74-a2c4-4390-94ac-771dc4e3c46e" />
+<img width="1000" height="667" alt="header_banner" src="https://github.com/user-attachments/assets/0b896b80-f3e9-4b20-ae57-28984ae8ea75" />
+<img width="265" height="480" alt="av_verao" src="https://github.com/user-attachments/assets/badc7c5d-03ca-4053-9135-beeb32660776" />
+<img width="265" height="480" alt="av_primavera" src="https://github.com/user-attachments/assets/bbab672f-b211-4e09-9f8a-506512abe748" />
+<img width="265" height="480" alt="av_outono" src="https://github.com/user-attachments/assets/b74c0f6b-b05c-4fe2-9d60-da53ebec4b50" />
+<img width="265" height="480" alt="av_inverno" src="https://github.com/user-attachments/assets/849cbadf-817d-493b-87b0-3b0678f57186" />
